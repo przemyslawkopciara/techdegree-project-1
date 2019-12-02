@@ -5,38 +5,51 @@
 // Each inner array element should be an associative array
 $quotes = [
 	[
-		'quote' => 'We know what we are, but know not what we may be.',
-		'source' => 'William Shakespeare',
+		'quote' => 'Intelligence is the ability to adapt to change.',
+		'source' => 'Stephen Hawking',
 		'citation' => '',
-		'year' => ''
+		'year' => '',
+		'tags' => ['Intelligence', 'Life']
 	],
 
 	[
-		'quote' => 'That\'s one small step for a man, one giant leap for mankind',
+		'quote' => 'We know what we are, but know not what we may be.',
+		'source' => 'William Shakespeare',
+		'citation' => '',
+		'year' => '',
+		'tags' => []
+	],
+
+	[
+		'quote' => 'That\'s one small step for a man, one giant leap for mankind.',
 		'source' => 'Neil Armstrong',
 		'citation' => '',
-		'year' => ''
+		'year' => '',
+		'tags' => []
 	],
 
 	[
 		'quote' => 'Anyone who has never made a mistake has never tried anything new.',
 		'source' => 'Albert Einstein',
 		'citation' => '',
-		'year' => ''
+		'year' => '',
+		'tags' => ['Science', 'Intelligence']
 	],
 
 	[
 		'quote' => 'We’ve all got both light and dark inside us. What matters is the part we choose to act on. That’s who we really are.',
 		'source' => 'J. K. Rowling',
 		'citation' => 'Harry Potter and the Order of the Phoenix',
-		'year' => '2004'
+		'year' => '2004',
+		'tags' => ['Literature', 'Books']
 	],
 
 	[
 		'quote' => 'It\'s the possibility of having a dream come true that makes life interesting.',
 		'source' => 'Paulo Coelho',
 		'citation' => 'The Alchemist',
-		'year' => '2017'
+		'year' => '2017',
+		'tags' => ['Literature', 'Life', 'Dream']
 	],
 
 ];
@@ -66,6 +79,11 @@ function printQuote($arr) {
 	}
 
 	$html .= '</p>';
+
+	// The paragraph element that holds the tags properties should only be created if the current quote element has those items
+	if(count($quote['tags'])) {
+		$html .= '<p>' . implode(", ", $quote['tags']) . '</p>';
+	}
 
 	// Display the completed HTML string
 	echo $html;

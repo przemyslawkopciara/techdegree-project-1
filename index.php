@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body style="background-color: <?php getRandomColor(); ?>;">
 	<div class="container">
 		<div id="quote-box">
 			<?php printQuote($quotes); ?>

@@ -43,18 +43,18 @@ $quotes = [
 
 
 // Create the getRandomQuuote function and name it getRandomQuote
-function getRandomQuote($array) {
+function getRandomQuote($arr) {
 
-	// Return random array element
-	return $array[array_rand($array)];
+	// Returns a random inner array element from the quotes array
+	return $arr[array_rand($arr)];
 }
 
 
 // Create the printQuote funtion and name it printQuote
-function printQuote($array) {
+function printQuote($arr) {
 
 	// Call getRandomQuote function and store the result in a variable
-	$quote = getRandomQuote($array);
+	$quote = getRandomQuote($arr);
 
 	// Create a variable that strores created HTML string
 	$html = '<p class="quote">'.$quote['quote'].'</p>';
@@ -69,5 +69,20 @@ function printQuote($array) {
 
 	// Display the completed HTML string
 	echo $html;
+}
+
+// Function getRandomColor randomly change the background color of the page
+function getRandomColor() {
+
+	// Create a variable that stores created HEX code string
+	$backgroundColor = '#';
+
+	// Get six random values from the array and assign them to the variable
+	for ($i=0; $i < 6; $i++) { 
+		$backgroundColor .= array_rand(array("9","A","B","C","D","E","F"));
+	}
+
+	// Display the completed HEX code string
+	echo $backgroundColor;
 }
 ?>
